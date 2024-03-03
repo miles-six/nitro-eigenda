@@ -87,7 +87,7 @@ func (b *Builder) SendTransaction(ctx context.Context, tx *types.Transaction) er
 }
 
 // While this is not currently required, it's recommended not to reuse the returned auth for multiple transactions,
-// as for an EOA this has the nonce in it. However, the EOA wwallet currently will only publish the first created tx,
+// as for an EOA this has the nonce in it. However, the EOA wallet currently will only publish the first created tx,
 // which is why that doesn't really matter.
 func (b *Builder) AuthWithAmount(ctx context.Context, amount *big.Int) (*bind.TransactOpts, error) {
 	nonce, err := b.NonceAt(ctx, b.builderAuth.From, nil)
